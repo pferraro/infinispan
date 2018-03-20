@@ -340,10 +340,10 @@ public class DefaultDataContainer<K, V> implements DataContainer<K, V> {
          if (newEntry == oldEntry) {
             return oldEntry;
          } else if (newEntry == null) {
-            activator.onRemove(k, false);
+            activator.onRemove(key, false);
             return null;
          }
-         activator.onUpdate(k, oldEntry == null);
+         activator.onUpdate(key, oldEntry == null);
          if (trace)
             log.tracef("Store %s in container", newEntry);
          return newEntry;
